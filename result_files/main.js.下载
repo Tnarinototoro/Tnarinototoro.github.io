@@ -1,0 +1,18 @@
+if (typeof(window.console) == "undefined") { console = {}; console.log = console.warn = console.error = function(a) {}; }
+
+$(function () {
+    var lang = Cookies.get('lang');
+    if (!lang){
+        Cookies.set('lang', 'en');
+    }
+});
+
+function changeLanguage(){
+    var lang = Cookies.get('lang');
+    if (lang === 'en'){
+        Cookies.set('lang', 'ja');
+    } else {
+        Cookies.set('lang', 'en');
+    }
+    location.reload();
+}
